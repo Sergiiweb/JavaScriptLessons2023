@@ -158,14 +158,13 @@ switch (dayOfWeek) {
 let firstNumber = +prompt('enter first number:');
 let secondNumber = +prompt('enter second number:');
 
-if(firstNumber > secondNumber){
+if (firstNumber > secondNumber) {
     console.log(firstNumber);
-} else if(firstNumber < secondNumber){
+} else if (firstNumber < secondNumber) {
     console.log(secondNumber);
 } else {
     console.log('equal');
 }
-
 
 
 // - є змінна х, яка може прийняти будь-яке значення (стрінг, число, undefined, null  і тд включно).
@@ -185,15 +184,16 @@ if(firstNumber > secondNumber){
 
 let x1 = undefined;
 
-if (Boolean(x1) === false){
+if (Boolean(x1) === false) {
     x1 = 'default';
 }
 console.log(x1);
 
-// if (!!!x){
-//     x = 'default';
+// let x2 = '';
+// if (!x2){
+//     x2 = 'default';
 // }
-// console.log(x);
+// console.log(x2);
 
 
 //
@@ -211,8 +211,9 @@ let coursesAndDurationArray = [
 ];
 
 for (const coursesAndDurationArrayElement of coursesAndDurationArray) {
-    if (coursesAndDurationArrayElement.monthDuration > 5){
+    if (coursesAndDurationArrayElement.monthDuration > 5) {
         console.log('Super!');
     }
     console.log('');
 }
+
