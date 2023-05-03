@@ -165,3 +165,54 @@ if(firstNumber > secondNumber){
 } else {
     console.log('equal');
 }
+
+
+
+// - є змінна х, яка може прийняти будь-яке значення (стрінг, число, undefined, null  і тд включно).
+// Напишіть код який,
+//     за допомоги  оператора || буде присвоювати змінній х значення "default"  якщо значення змінної х
+//     являється falsy (хибноподібні, тобто приводиться до false)
+// Boolean('')           // false
+// Boolean(0)            // false
+// Boolean(-0)           // false
+// Boolean(NaN)          // false
+// Boolean(null)         // false
+// Boolean(undefined)    // false
+// Boolean(false)        // false
+// Boolean({})             // true
+// Boolean([])             // true
+// Boolean(function() {})  // true
+
+let x1 = undefined;
+
+if (Boolean(x1) === false){
+    x1 = 'default';
+}
+console.log(x1);
+
+// if (!!!x){
+//     x = 'default';
+// }
+// console.log(x);
+
+
+//
+// - з файлу arrays.js (лежить в папці 2023 plan ) взяти масив coursesAndDurationArray.
+// За допомоги іф перевірити кожен його елемент на тривалість навчання.
+// У випадку якщо тривалість довша за 5 місяців вивести в консоль "Супер".
+
+let coursesAndDurationArray = [
+    {title: 'JavaScript Complex', monthDuration: 5},
+    {title: 'Java Complex', monthDuration: 6},
+    {title: 'Python Complex', monthDuration: 6},
+    {title: 'QA Complex', monthDuration: 4},
+    {title: 'FullStack', monthDuration: 7},
+    {title: 'Frontend', monthDuration: 4}
+];
+
+for (const coursesAndDurationArrayElement of coursesAndDurationArray) {
+    if (coursesAndDurationArrayElement.monthDuration > 5){
+        console.log('Super!');
+    }
+    console.log('');
+}
