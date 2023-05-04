@@ -24,13 +24,17 @@ let book3 = {
 }
 // console.log(book1);
 
-// - Створити 3 об'єкти які описують книги. Поля об'єкту : title ,pageCount, genre, authors. Поле "автори" - являється  масивом. Кожен автор має поля name та age.
+// - Створити 3 об'єкти які описують книги. Поля об'єкту : title ,pageCount, genre, authors.
+// Поле "автори" - являється  масивом. Кожен автор має поля name та age.
 
 let book4 = {
     title: 'First Book',
     pageCount: 50,
     genre: 'action',
-    authors: ['Maria', 28]
+    authors: [
+        {name: 'Maria', age: 28},
+        {name: 'Ant', age: 54},
+    ]
 }
 let book5 = {
     title: 'Second Book',
