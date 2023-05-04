@@ -1,0 +1,22 @@
+.product-card {
+    border: 1px solid grey;
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    border-radius: 10px;
+    padding: 10px;
+}
+.product-title {
+    border: 1px solid darkgray;
+    text-transform: capitalize;
+    padding: 10px;
+    border-radius: 10px;
+}
+.product-image {
+    width: 70%;
+    border-radius: 20px;
+    border: 1px solid lightgrey;
+}
