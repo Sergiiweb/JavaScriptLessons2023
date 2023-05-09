@@ -120,7 +120,7 @@ document.write(`
         <ol>
     `)
 for (const user of users) {
-    if (user.status === true) {
+    if (user.status) {
         document.write(`<li>Name: ${user.name}. Age: ${user.age}. Status: ${user.status}.</li>`);
     }
 }
@@ -131,7 +131,7 @@ document.write(`
         <ol>
     `)
 for (const user of users) {
-    if (user.status === false) {
+    if (!user.status) {
         document.write(`<li>Name: ${user.name}. Age: ${user.age}. Status: ${user.status}.</li>`);
     }
 }
