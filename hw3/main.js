@@ -137,6 +137,7 @@ for (const user of users) {
 }
 document.write(`</ol>`);
 
+
 document.write(`
         <h3>Користувачі, які старші за 30 років:</h3>
         <ol>
