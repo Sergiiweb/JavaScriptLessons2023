@@ -342,7 +342,6 @@ for (const book of books) {
         oneAuthors[oneAuthors.length] = book;
     }
 }
-
 console.log(biggestBook);
 console.log(biggestGenre);
 console.log(longestTitle);
