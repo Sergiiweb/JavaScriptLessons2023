@@ -127,17 +127,53 @@ console.log(oneOrTwo(4, 5));
 console.log(oneOrTwo('4', '5'));
 console.log(oneOrTwo(8));
 
-// - створити функцію  яка приймає два масиви та скаладає значення елементів з однаковими індексами  та повертає новий результуючий масив.
+// - створити функцію  яка приймає два масиви та скаладає значення елементів з однаковими індексами
+// та повертає новий результуючий масив.
 //     EXAMPLE:
 // [1,2,3,4]
 //     [2,3,4,5]
 // результат
 //     [3,5,7,9]
-//
+
+function sumTwoArrays(arr1, arr2){
+    const res = [];
+    for (let i = 0; i < arr1.length; i++) {
+        res.push(arr1[i]+arr2[i]);
+    }
+    return res;
+}
+
+console.log(sumTwoArrays([1, 2, 3, 4], [2, 3, 4, 5]));
+
 // - Створити функцію яка приймає масив будь яких объектів, та повертає масив ключів всіх обєктів
 // EXAMPLE:
 //     [{name: 'Dima', age: 13}, {model: 'Camry'}]  ===> [ name, age, model ]
-//
+
+function arrOfKeys(arr){
+    const res = [];
+    for (const arrElement of arr) {
+        for (const arrElementKey in arrElement) {
+            res.push(arrElementKey);
+        }
+    }
+    return res;
+}
+
+console.log(arrOfKeys([{name: 'Dima', age: 13}, {model: 'Camry'}]));
+
+
 //     - Створити функцію яка приймає масив будь яких объектів, та повертає масив значень всіх обєктів
 // EXAMPLE:
 //     [{name: 'Dima', age: 13}, {model: 'Camry'}]  ===> [ Dima, 13, Camry ]
+
+function arrOfValues(arr){
+    const res = [];
+    for (const arrElement of arr) {
+        for (const arrElementKey in arrElement) {
+            res.push(arrElement[arrElementKey]);
+        }
+    }
+    return res;
+}
+
+console.log(arrOfValues([{name: 'Dima', age: 13}, {model: 'Camry'}]));
