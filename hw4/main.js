@@ -10,7 +10,7 @@ console.log('----------------');
 // - створити функцію яка обчислює та повертає площу кола з радіусом r
 
 function circleArea(r) {
-    return 2 * Math.PI * r;
+    return Math.PI * r ** 2;
 }
 
 console.log(circleArea(10));
@@ -157,7 +157,7 @@ function exchange(sumUAH, currencyValues, exchangeCurrency) {
     // }
     // return sumUAH / currencyValues[1].value;
     for (const currencyValue of currencyValues) {
-        if(exchangeCurrency === currencyValue.currency){
+        if (exchangeCurrency === currencyValue.currency) {
             return sumUAH / currencyValue.value;
         }
     }
