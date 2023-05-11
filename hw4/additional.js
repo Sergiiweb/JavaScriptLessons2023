@@ -78,10 +78,10 @@ console.log(minMax(1, 11, 22, 3, 44, 5, 6));
 // - створити функцію яка заповнює масив рандомними числами
 // (цей код генерує рандомні числа в діапазоні від 0 до 100 - Math.round(Math.random()*100)) та виводить його.
 
-function random(){
-    let arr = [];
+function random() {
+    const arr = [];
     for (let i = 0; i < 10; i++) {
-        arr.push(Math.round(Math.random()*100));
+        arr.push(Math.round(Math.random() * 100));
     }
     return arr;
 }
@@ -91,10 +91,10 @@ console.log(random());
 // - створити функцію яка заповнює масив рандомними числами в діапазоні від 0 до limit. limit - аргумент,
 // який характеризує кінцеве значення діапазону.
 
-function randomLim(limit){
-    let arr = [];
+function randomLim(limit) {
+    const arr = [];
     for (let i = 0; i < limit; i++) {
-        arr.push(Math.round(Math.random()*100));
+        arr.push(Math.round(Math.random() * 100));
     }
     return arr;
 }
@@ -102,12 +102,31 @@ function randomLim(limit){
 console.log(randomLim(15));
 
 // - Функція приймає масив та робить з нього новий масив в зворотньому порядку. [1,2,3] -> [3, 2, 1].
-//
-//
-//
-//
-// - створити функцію, яка якщо приймає один аргумент, просто вивдоить його, якщо два аргументи - складає або конкатенує їх між собою.
-//
+
+function reverseArray(arr) {
+    const reverseArr = [];
+    for (let i = arr.length - 1; i >= 0; i--) {
+        reverseArr.push(arr[i]);
+    }
+    return reverseArr;
+}
+
+console.log(reverseArray([1, 2, 3]));
+
+// - створити функцію, яка якщо приймає один аргумент, просто вивдоить його,
+// якщо два аргументи - складає або конкатенує їх між собою.
+
+function oneOrTwo(...arg) {
+    if (arg[1]) {
+        return arg[0] + arg[1];
+    }
+    return arg[0];
+}
+
+console.log(oneOrTwo(4, 5));
+console.log(oneOrTwo('4', '5'));
+console.log(oneOrTwo(8));
+
 // - створити функцію  яка приймає два масиви та скаладає значення елементів з однаковими індексами  та повертає новий результуючий масив.
 //     EXAMPLE:
 // [1,2,3,4]
