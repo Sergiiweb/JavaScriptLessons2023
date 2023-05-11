@@ -33,7 +33,7 @@ console.log(findMax(7, 5, 6));
 function findMaxFromArray(arr) {
     let max = arr[0];
     for (const arrElement of arr) {
-        if(arrElement > max){
+        if (arrElement > max) {
             max = arrElement;
         }
     }
@@ -43,7 +43,38 @@ function findMaxFromArray(arr) {
 console.log(findMaxFromArray([1, 11, 22, 3, 44, 5, 6]));
 
 // - створити функцію яка приймає масив чисел та повертає середнє арифметичне його значень.
-// - створити функцію яка приймає будь-яку кількість чисел, повертає найменьше, а виводить найбільше (Math використовувати заборонено);
+
+function mean(array) {
+    let sum = 0;
+    for (const arrayElement of array) {
+        sum += arrayElement;
+    }
+    return sum / array.length;
+}
+
+console.log(mean([1, 11, 22, 3, 44, 5, 6]));
+
+// - створити функцію яка приймає будь-яку кількість чисел, повертає найменьше,
+// а виводить найбільше (Math використовувати заборонено);
+
+function minMax(...arg) {
+    let min = arg[0];
+    let max = arg[0];
+    for (const argElement of arg) {
+        if (argElement < min) {
+            min = argElement;
+        }
+        if (argElement > max) {
+            max = argElement;
+        }
+    }
+    console.log(max);
+    return min;
+}
+
+minMax(1, 11, 22, 3, 44, 5, 6);
+console.log(minMax(1, 11, 22, 3, 44, 5, 6));
+
 // - створити функцію яка заповнює масив рандомними числами
 // (цей код генерує рандомні числа в діапазоні від 0 до 100 - Math.round(Math.random()*100)) та виводить його.
 // - створити функцію яка заповнює масив рандомними числами в діапазоні від 0 до limit. limit - аргумент, який характеризує кінцеве значення діапазону.
