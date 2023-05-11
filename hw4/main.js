@@ -152,10 +152,15 @@ console.log(swap([11, 22, 33, 44], 0, 1));
 // Приклад exchange(10000,[{currency:'USD',value:40},{currency:'EUR',value:42}],'USD') // => 250
 
 function exchange(sumUAH, currencyValues, exchangeCurrency) {
-    if (exchangeCurrency === 'USD') {
-        return sumUAH / currencyValues[0].value;
+    // if (exchangeCurrency === 'USD') {
+    //     return sumUAH / currencyValues[0].value;
+    // }
+    // return sumUAH / currencyValues[1].value;
+    for (const currencyValue of currencyValues) {
+        if(exchangeCurrency === currencyValue.currency){
+            return sumUAH / currencyValue.value;
+        }
     }
-    return sumUAH / currencyValues[1].value;
 }
 
 console.log(exchange(10000, [{currency: 'USD', value: 40}, {currency: 'EUR', value: 42}], 'USD'));
