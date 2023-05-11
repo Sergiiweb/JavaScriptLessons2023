@@ -13,7 +13,7 @@ function findMin(a, b, c) {
 
 console.log(findMin(7, 5, 6));
 
-// - створити функцію яка приймає три числа та виводить найбільше. (Без Math.max!)
+// - створити функцію яка приймає три числа та виводить найбільше.(Без Math.max!)
 
 function findMax(a, b, c) {
     let max = a;
