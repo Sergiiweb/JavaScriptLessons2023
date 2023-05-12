@@ -31,11 +31,10 @@ function printArr(arr) {
     for (const arrElement of arr) {
         console.log(arrElement);
     }
-    return arr;
 }
 
 const array1 = [1.2, 3, 5, 8, 10, 100500, 'string'];
-console.log(printArr(array1));
+printArr(array1);
 console.log('----------------');
 
 // - створити функцію яка створює параграф з текстом. Текст задати через аргумент
