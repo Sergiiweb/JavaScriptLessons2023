@@ -246,11 +246,12 @@ let coursesArray = [
 ];
 // --написати пошук всіх об'єктів, в який в modules є sass
 
-let filteredSass = coursesArray.filter(value => {
-    if (value.modules.includes('sass')){
-        return value;
-    }
-});
+let filteredSass = coursesArray.filter(value => value.modules.includes('sass'));
+// let filteredSass = coursesArray.filter(value => {
+//     if (value.modules.includes('sass')){
+//         return value;
+//     }
+// });
 console.log(filteredSass);
 
 // --написати пошук всіх об'єктів, в який в modules є docker
