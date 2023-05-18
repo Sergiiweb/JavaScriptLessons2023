@@ -100,8 +100,31 @@ document.write(`<br />`);
 // some.email@gmail.com
 //
 // Примітка
-// Для тих, хто дуже розумний, та почне використовувати регулярні вирази одразу "ні". Своїм мозком подумайте над протоколом, з регулярками будете потім бавитись.
-//
+// Для тих, хто дуже розумний, та почне використовувати регулярні вирази одразу "ні".
+// Своїм мозком подумайте над протоколом, з регулярками будете потім бавитись.
+
+function validator(email) {
+    email = email.toLowerCase();
+    if (twoLetterBeforeRavlyk(email) && haveRavlyk(email) && pointAfterRavlyk(email)) {
+        document.write(`Your email: ${email} is correct!`);
+        return true;
+    }
+    document.write(`Incorrect email: ${email}`);
+}
+
+let twoLetterBeforeRavlyk = (email) => email.indexOf(`@`) > 1;
+let haveRavlyk = (email) => email.indexOf(`@`) !== -1;
+let pointAfterRavlyk = (email) => email.lastIndexOf('.') - email.indexOf('@') > 2;
+
+validator('someemail@gmail.com');
+document.write(`<br />`);
+validator('someeMAIL@gmail.com');
+document.write(`<br />`);
+validator('someeMAIL@i.ua');
+document.write(`<br />`);
+validator('some.email@gmail.com');
+document.write(`<br />`);
+
 // - є масивlet coursesArray = [
 //     {
 //         title: 'JavaScript Complex',
