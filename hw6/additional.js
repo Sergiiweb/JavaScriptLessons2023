@@ -203,10 +203,10 @@ console.log(sortByModules);
 
 // - Напишіть функцію count(str, stringsearch), яка повертає кількість символів stringsearch у рядку str.
 
-function count(str, stringsearch) {
+function count(str, stringSearch) {
     let count = 0;
     for (const item of str) {
-        if(item === stringsearch){
+        if(item === stringSearch){
             count++;
         }
     }
@@ -215,11 +215,14 @@ function count(str, stringsearch) {
 
 let symb = "о", str2 = "Астрономия это наука о небесных объектах";
 document.write(count(str2, symb)) // 5
-//
+document.write(`<br />`);
+
 // - Напишіть функцію cutString(str, n), яка видаляє зайві слова з рядка str, залишивши у ній n слів.
-//     let str = "Сила тяжести приложена к центру масс тела";
-// document.writeln(cutString(str, 5)) // 'Сила тяжести приложена к центру'
-//
+let cutString2 = (str, n) => str.split(' ').slice(0,n).join(' ');
+
+let str3 = "Сила тяжести приложена к центру масс тела";
+document.writeln(cutString2(str3, 5)) // 'Сила тяжести приложена к центру'
+document.write(`<br />`);
 //
 // -стоврити масив книжок (назва, кількість сторінок, автори , жанри).
 // -знайти наібльшу книжку.
