@@ -145,7 +145,7 @@ console.log(filterReds);
 let filterDiamonds = cardsDeck.filter(value => value.cardSuit === 'diamond');
 console.log(filterDiamonds);
 // - всі трефи від 9 та більше
-let filterClubsMoreNine = cardsDeck.filter((value, index) => value.cardSuit === 'clubs' && (value.value >= '9' || value.value === '10'));
+let filterClubsMoreNine = cardsDeck.filter(value => value.cardSuit === 'clubs' && (value.value >= '9' || value.value === '10'));
 console.log(filterClubsMoreNine);
 
 // =========================
@@ -157,18 +157,18 @@ console.log(filterClubsMoreNine);
 //     clubs:[]
 // }
 
-let filterCards = cardsDeck.reduce((akumulator, card) => {
+let filterCards = cardsDeck.reduce((accumulator, card) => {
     if (card.cardSuit === 'spade') {
-        akumulator.spades.push(card);
+        accumulator.spades.push(card);
     } else if (card.cardSuit === 'diamond') {
-        akumulator.diamonds.push(card);
+        accumulator.diamonds.push(card);
     } else if (card.cardSuit === 'heart') {
-        akumulator.hearts.push(card);
+        accumulator.hearts.push(card);
     } else {
-        akumulator.clubs.push(card);
+        accumulator.clubs.push(card);
     }
 
-    return akumulator;
+    return accumulator;
 }, {spades: [], diamonds: [], hearts: [], clubs: []})
 
 console.log(filterCards);
