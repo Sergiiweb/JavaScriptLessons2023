@@ -230,12 +230,14 @@ const books = [
         title: 'Title1',
         pages: 100,
         authors: [{name: 'Name1', age: 25}, {name: 'Name2', age: 30}],
-        genre: ['action']},
+        genre: ['action']
+    },
     {
         title: 'Title2444',
         pages: 170,
         authors: [{name: 'Name1', age: 25}],
-        genre: ['action']},
+        genre: ['action']
+    },
     {
         title: 'Title3ggggggfgd LONG',
         pages: 80,
@@ -260,7 +262,7 @@ const books = [
 ]
 
 // -знайти наібльшу книжку.
-let biggestBook = books.sort((a,b)=>b.pages - a.pages)[0];
+let biggestBook = books.sort((a, b) => b.pages - a.pages)[0];
 console.log(biggestBook);
 
 // - знайти книжку/ки з найбільшою кількістю жанрів
@@ -280,5 +282,5 @@ let oneAuthorsBooks = books.filter(value => value.authors.length === 1);
 console.log(oneAuthorsBooks);
 
 // - вісортувати книжки по кількості сторінок по зростанню
-let sortedBooks = books.sort((a,b)=>a.pages - b.pages);
+let sortedBooks = books.sort((a, b) => a.pages - b.pages);
 console.log(sortedBooks);
