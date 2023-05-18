@@ -106,10 +106,10 @@ document.write(`<br />`);
 function validator(email) {
     email = email.toLowerCase();
     if (twoLetterBeforeRavlyk(email) && haveRavlyk(email) && pointAfterRavlyk(email)) {
-        document.write(`Your email: ${email} is correct!`);
+        document.write(`Your email: <b>${email}</b> is correct!`);
         return true;
     }
-    document.write(`Incorrect email: ${email}`);
+    document.write(`Incorrect email: <b>${email}</b>`);
 }
 
 let twoLetterBeforeRavlyk = (email) => email.indexOf(`@`) > 1;
