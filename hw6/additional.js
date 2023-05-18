@@ -206,7 +206,7 @@ console.log(sortByModules);
 function count(str, stringSearch) {
     let count = 0;
     for (const item of str) {
-        if(item === stringSearch){
+        if (item === stringSearch) {
             count++;
         }
     }
@@ -218,16 +218,67 @@ document.write(count(str2, symb)) // 5
 document.write(`<br />`);
 
 // - Напишіть функцію cutString(str, n), яка видаляє зайві слова з рядка str, залишивши у ній n слів.
-let cutString2 = (str, n) => str.split(' ').slice(0,n).join(' ');
+let cutString2 = (str, n) => str.split(' ').slice(0, n).join(' ');
 
 let str3 = "Сила тяжести приложена к центру масс тела";
 document.writeln(cutString2(str3, 5)) // 'Сила тяжести приложена к центру'
 document.write(`<br />`);
 //
 // -стоврити масив книжок (назва, кількість сторінок, автори , жанри).
+const books = [
+    {
+        title: 'Title1',
+        pages: 100,
+        authors: [{name: 'Name1', age: 25}, {name: 'Name2', age: 30}],
+        genre: ['action']},
+    {
+        title: 'Title2444',
+        pages: 170,
+        authors: [{name: 'Name1', age: 25}],
+        genre: ['action']},
+    {
+        title: 'Title3ggggggfgd LONG',
+        pages: 80,
+        authors: [{name: 'Name1', age: 25}, {name: 'Name2', age: 30}, {name: 'Name3', age: 30}],
+        genre: ['action', 'love']
+    },
+    {
+        title: 'Title4232311',
+        pages: 1010,
+        authors: [{name: 'Name1', age: 25}, {name: 'Name2', age: 30}],
+        genre: ['action', 'love']
+    },
+    {
+        title: 'Title5!!!!',
+        pages: 10,
+        authors: [{name: 'Name1', age: 25}, {name: 'Name2', age: 30}, {name: 'Name3', age: 30}, {
+            name: 'Name4',
+            age: 30
+        }],
+        genre: ['action', 'love', 'drama']
+    },
+]
+
 // -знайти наібльшу книжку.
+let biggestBook = books.sort((a,b)=>b.pages - a.pages)[0];
+console.log(biggestBook);
+
 // - знайти книжку/ки з найбільшою кількістю жанрів
+let maxGenresCount = books.sort((a, b) => b.genre.length - a.genre.length)[0];
+console.log(maxGenresCount);
+
 // - знайти книжку/ки з найдовшою назвою
+let longestTitle = books.sort((a, b) => b.title.length - a.title.length)[0];
+console.log(longestTitle);
+
 // - знайти книжку/ки які писали 2 автори
+let twoAuthorsBooks = books.filter(value => value.authors.length === 2);
+console.log(twoAuthorsBooks);
+
 // - знайти книжку/ки які писав 1 автор
+let oneAuthorsBooks = books.filter(value => value.authors.length === 1);
+console.log(oneAuthorsBooks);
+
 // - вісортувати книжки по кількості сторінок по зростанню
+let sortedBooks = books.sort((a,b)=>a.pages - b.pages);
+console.log(sortedBooks);
