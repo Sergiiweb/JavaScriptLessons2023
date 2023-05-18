@@ -1,5 +1,5 @@
 // - Напишите функцию cutString(str, n), которая делит строку на подстроки, состоящие из n символов.
-document.writeln(cutString('наслаждение', 3)) // [нас,лаж,ден,ие]
+document.writeln(cutString('наслаждение', 3)); // [нас,лаж,ден,ие]
 
 function cutString(str, n) {
     const res = [];
@@ -8,6 +8,7 @@ function cutString(str, n) {
     }
     return res;
 }
+
 document.write(`<br />`);
 
 // - Напишіть функцію delete_characters(str, length), яка повертає підрядок, що складається із зазначеної
@@ -32,15 +33,32 @@ document.writeln(firstLetterToUp('наслаждение'));
 document.write(`<br />`);
 
 // - Дано список імен.
-//     let n1 = 'Harry..Potter'
-// let n2 = 'Ron---Whisley'
-// let n3 = 'Hermione__Granger'
+let n1 = 'Harry..Potter';
+let n2 = 'Ron---Whisley';
+let n3 = 'Hermione__Granger';
 // Написати функцію, яка приймає будь яке не валідне імя, та нормалізує його в наступнйи вигляд
-// let n1 = 'Harry Potter'
-// let n2 = 'Ron Whisley'
-// let n3 = 'Hermione Granger'
-//
-//     - створити функцію, яка генерує масив рандомних числових цілих значень в діапазоні від 0 до 100.
+let nameImprover = (name) => name.replaceAll('..', ' ').replaceAll('---', ' ').replaceAll('__', ' ');
+
+document.write(nameImprover(n1));// let n1 = 'Harry Potter'
+document.write(`<br />`);
+document.write(nameImprover(n2));// let n2 = 'Ron Whisley'
+document.write(`<br />`);
+document.write(nameImprover(n3));// let n3 = 'Hermione Granger'
+document.write(`<br />`);
+
+// - створити функцію, яка генерує масив рандомних числових цілих значень в діапазоні від 0 до 100.
+
+let randomArrayOfNumbers = (n) => {
+    let res = [];
+    for (let i = 0; i < n; i++) {
+        res.push(Math.floor(Math.random() * 100));
+    }
+    return res;
+}
+
+document.write(randomArrayOfNumbers(10));
+document.write(`<br />`);
+
 // - створити (або згенерувати, за допомоги попередньої функції) масив рандомних цілих числових значень. Відсортувати його за допомоги sort
 // - створити (або згенерувати, за допомоги попередньої функції) масив рандомних цілих числових значень. відфільтрувати  його за допомоги filter, залишивши тільки парні числа (без 0!)
 //
