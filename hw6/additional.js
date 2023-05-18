@@ -28,7 +28,7 @@ document.write(`<br />`);
 // - Напишіть функцію, яка приймає рядок як аргумент і перетворює регістр першого символу рядка
 // з нижнього регістру у верхній.
 
-let firstLetterToUp = (str) => str[0].toUpperCase() + str.substring(1, str.length);
+let firstLetterToUp = (str) => str[0].toUpperCase() + str.slice(1);
 document.writeln(firstLetterToUp('наслаждение'));
 document.write(`<br />`);
 
@@ -74,9 +74,25 @@ document.write(`<br />`);
 
 // - Напишіть функцію capitalize(str), яка повертає рядок, у якому кожне слово починається з великої літери.
 
+function capitalize(str) {
+    const tempArr = str.split(' ');
+    const res = [];
+    for (let i = 0; i < tempArr.length; i++) {
+        res.push(tempArr[i][0].toUpperCase() + tempArr[i].slice(1));
+    }
+    return res.join(' ');
+}
 
+document.write(str);
+document.write(`<br />`);
+document.write(capitalize(str));
+document.write(`<br />`);
 
-// - Створити функцію-валідатор для адрес електронної пошти. Перевірка повинна включати в себе :данні до знака равлика(@), наявність равлика, крапку яка знаходиться не меньше ніж на 2 символ далі після равлика, функція не чутлива до регістру (some@email.com,SOME@EMAIL.COM,some@EMAIL.com, і тд - однакові значення)
+// - Створити функцію-валідатор для адрес електронної пошти.
+// Перевірка повинна включати в себе :данні до знака равлика(@), наявність равлика,
+// крапку яка знаходиться не меньше ніж на 2 символ далі після равлика, функція не чутлива до
+// регістру (some@email.com,SOME@EMAIL.COM,some@EMAIL.com, і тд - однакові значення)
+
 // Протестувати на значеннях
 // someemail@gmail.com
 // someeMAIL@gmail.com
