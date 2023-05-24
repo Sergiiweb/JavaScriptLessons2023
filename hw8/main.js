@@ -83,10 +83,10 @@ function Car(model, manufacturer, year, maxSpeed, engineVolume) {
     this.year = year;
     this.maxSpeed = maxSpeed;
     this.engineVolume = engineVolume;
-    this.drive = function (){
+    this.drive = function () {
         console.log(`їдемо зі швидкістю ${this.maxSpeed} на годину`);
     }
-    this.info = function (){
+    this.info = function () {
         console.log(`модель ${this.model}, виробник ${this.manufacturer}, рік випуску ${this.year}, максимальна швидкість ${this.maxSpeed}, об'єм двигуна ${this.engineVolume}`);
     }
     this.increaseMaxSpeed = function (newSpeed) {
@@ -95,10 +95,11 @@ function Car(model, manufacturer, year, maxSpeed, engineVolume) {
     this.changeYear = function (newValue) {
         this.year = newValue;
     }
-    this.addDriver = function (...driver){
+    this.addDriver = function (...driver) {
         this.driver = driver;
     }
 }
+
 let car1 = new Car('z350', 'Nissan', 2010, 250, 3.5);
 console.log(car1);
 car1.drive();
@@ -117,10 +118,92 @@ console.log(car1);
 // -- increaseMaxSpeed (newSpeed) - яка підвищує значення максимальної швидкості на значення newSpeed
 // -- changeYear (newValue) - змінює рік випуску на значення newValue
 // -- addDriver (driver) - приймає об'єкт який "водій" з довільним набором полів, і додає його в поточний об'єкт car
-//
-//
-//
-// -створити класс/функцію конструктор попелюшка з полями ім'я, вік, розмір ноги. Створити масив з 10 попелюшок.
+class Car2 {
+    constructor(model, manufacturer, year, maxSpeed, engineVolume) {
+        this.model = model;
+        this.manufacturer = manufacturer;
+        this.year = year;
+        this.maxSpeed = maxSpeed;
+        this.engineVolume = engineVolume;
+    }
+
+    drive() {
+        console.log(`їдемо зі швидкістю ${this.maxSpeed} на годину`);
+    }
+
+    info() {
+        console.log(`модель ${this.model}, виробник ${this.manufacturer}, рік випуску ${this.year}, максимальна швидкість ${this.maxSpeed}, об'єм двигуна ${this.engineVolume}`);
+    }
+
+    increaseMaxSpeed(newSpeed) {
+        this.maxSpeed += newSpeed;
+    }
+
+    changeYear(newValue) {
+        this.year = newValue;
+    }
+
+    addDriver(...driver) {
+        this.driver = driver;
+    }
+}
+
+let car2 = new Car2('Corolla', 'Toyota', 2013, 200, 1.5);
+console.log(car2);
+car2.drive();
+car2.info();
+car2.increaseMaxSpeed(50);
+car2.info();
+car2.changeYear(2015);
+car2.info();
+car2.addDriver('kokos', 31, 'pro');
+console.log(car2);
+
+// -створити класс/функцію конструктор попелюшка з полями ім'я, вік, розмір ноги.
+// Створити масив з 10 попелюшок.
+class Cinderella {
+    constructor(name, age, footSize) {
+        this.name = name;
+        this.age = age;
+        this.footSize = footSize;
+    }
+}
+let cinds = [
+    new Cinderella('Cinderella1', 18, 35),
+    new Cinderella('Cinderella2', 19, 36),
+    new Cinderella('Cinderella3', 20, 37),
+    new Cinderella('Cinderella4', 18, 34),
+    new Cinderella('Cinderella5', 22, 33),
+    new Cinderella('Cinderella6', 35, 38),
+    new Cinderella('Cinderella7', 15, 37),
+    new Cinderella('Cinderella8', 17, 35),
+    new Cinderella('Cinderella9', 47, 39),
+    new Cinderella('Cinderella10', 19, 32),
+]
+console.log(cinds);
+
 // Сторити об'єкт класу "принц" за допомоги класу який має поля ім'я, вік, туфелька яку він знайшов.
+
+class Prince {
+    constructor(name, age, foundShoeSize) {
+        this.name = name;
+        this.age = age;
+        this.foundShoeSize = foundShoeSize;
+    }
+}
+let prince = new Prince('Prince', 22, 36);
+console.log(prince);
 //     За допомоги циклу знайти яка попелюшка повинна бути з принцом.
+function finder (cinds, prince) {
+    for (const cind of cinds) {
+        if (cind.footSize === prince.foundShoeSize) {
+            return `Match!!! Here she is: ${cind.name}, ${cind.age} years old, foot size: ${cind.footSize}!!!`;
+        }
+    }
+    return 'There are no matches';
+}
+
+console.log(finder(cinds, prince));
 //     Додатково, знайти необхідну попелюшку за допомоги функції масиву find та відповідного колбеку
+let match = cinds.find(value => value.footSize === prince.foundShoeSize);
+console.log(match);
