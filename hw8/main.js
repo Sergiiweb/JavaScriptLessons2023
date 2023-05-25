@@ -95,7 +95,7 @@ function Car(model, manufacturer, year, maxSpeed, engineVolume) {
     this.changeYear = function (newValue) {
         this.year = newValue;
     }
-    this.addDriver = function (...driver) {
+    this.addDriver = function (driver) {
         this.driver = driver;
     }
 }
@@ -108,7 +108,7 @@ car1.increaseMaxSpeed(50);
 car1.info();
 car1.changeYear(2015);
 car1.info();
-car1.addDriver('kokos', 31, 'pro');
+car1.addDriver({name: 'kokos', age: 31, skill: 'pro'});
 console.log(car1);
 
 // - (Те саме, тільки через клас)
@@ -143,7 +143,7 @@ class Car2 {
         this.year = newValue;
     }
 
-    addDriver(...driver) {
+    addDriver(driver) {
         this.driver = driver;
     }
 }
@@ -156,7 +156,7 @@ car2.increaseMaxSpeed(50);
 car2.info();
 car2.changeYear(2015);
 car2.info();
-car2.addDriver('kokos', 31, 'pro');
+car2.addDriver({name: 'kokos', age: 31, skill: 'pro'});
 console.log(car2);
 
 // -створити класс/функцію конструктор попелюшка з полями ім'я, вік, розмір ноги.
@@ -168,6 +168,7 @@ class Cinderella {
         this.footSize = footSize;
     }
 }
+
 let cinds = [
     new Cinderella('Cinderella1', 18, 35),
     new Cinderella('Cinderella2', 19, 36),
@@ -191,10 +192,12 @@ class Prince {
         this.foundShoeSize = foundShoeSize;
     }
 }
+
 let prince = new Prince('Prince', 22, 36);
 console.log(prince);
+
 //     За допомоги циклу знайти яка попелюшка повинна бути з принцом.
-function finder (cinds, prince) {
+function finder(cinds, prince) {
     for (const cind of cinds) {
         if (cind.footSize === prince.foundShoeSize) {
             return `Match!!! Here she is: ${cind.name}, ${cind.age} years old, foot size: ${cind.footSize}!!!`;
