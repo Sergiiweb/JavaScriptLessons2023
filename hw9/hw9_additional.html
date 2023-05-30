@@ -47,13 +47,25 @@
 <script>
     // написати рекурсивну функцію, яка збирає всі назви класів з файлу rules.html в окремий масив.
     // масив вивести в консоль
- function explorer(htmlElement){
-     console.log(htmlElement);
+    const classesArray = [];
+    function explorer(htmlElement) {
+        console.log(htmlElement);
+        console.log(htmlElement.className);
+        let classesHtmlEl = [];
+        if(htmlElement.className){
+
+        }
+        let children = htmlElement.children;
+        if (children !==0){
+            for (const child of children) {
+                explorer(child);
+            }
+        }
 
 
- }
+    }
 
- explorer(document.body);
+    explorer(document.body);
 
 </script>
 </body>
