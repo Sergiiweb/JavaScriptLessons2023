@@ -49,11 +49,14 @@
     // масив вивести в консоль
     const classesArray = [];
     function explorer(htmlElement) {
-        console.log(htmlElement);
-        console.log(htmlElement.className);
         let classesHtmlEl = [];
         if(htmlElement.className){
-
+            classesHtmlEl = htmlElement.className.split(' ');
+        }
+        for (const classesHtmlItem of classesHtmlEl) {
+            if (!classesArray.includes(classesHtmlItem)){
+                classesArray.push(classesHtmlItem);
+            }
         }
         let children = htmlElement.children;
         if (children !==0){
@@ -61,12 +64,10 @@
                 explorer(child);
             }
         }
-
-
     }
 
     explorer(document.body);
-
+    console.log(classesArray);
 </script>
 </body>
 </html>
