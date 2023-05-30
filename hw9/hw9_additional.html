@@ -17,7 +17,7 @@
         <p>Никогда никому не рассказывать о Бойцовском клубе.</p>
     </div>
     <div class="rules rule3">
-        <h2>Третье правило Бойцовского клуба.</h2>
+        <h2 class="TEST-CLASS">Третье правило Бойцовского клуба.</h2>
         <p>В схватке участвуют только двое.</p>
     </div>
     <div class="rules rule4">
@@ -48,18 +48,19 @@
     // написати рекурсивну функцію, яка збирає всі назви класів з файлу rules.html в окремий масив.
     // масив вивести в консоль
     const classesArray = [];
+
     function explorer(htmlElement) {
         let classesHtmlEl = [];
-        if(htmlElement.className){
-            classesHtmlEl = htmlElement.className.split(' ');
+        if (htmlElement.className) {
+            classesHtmlEl = htmlElement.classList;
         }
         for (const classesHtmlItem of classesHtmlEl) {
-            if (!classesArray.includes(classesHtmlItem)){
+            if (!classesArray.includes(classesHtmlItem)) {
                 classesArray.push(classesHtmlItem);
             }
         }
         let children = htmlElement.children;
-        if (children !==0){
+        if (children !== 0) {
             for (const child of children) {
                 explorer(child);
             }
