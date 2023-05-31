@@ -251,7 +251,37 @@ document.write(`<hr>`);
 //
 //     - Створити довільний елемент з id = text та створити кнопку.Використовуючи JavaScript, зробіть так,
 //     щоб при натисканні на кнопку зникав елемент з id="text".
-//
-//
+const hideDiv = document.createElement('div');
+hideDiv.id = 'text';
+document.body.appendChild(hideDiv);
+
+const hideButton = document.createElement('button');
+hideButton.innerText = 'Hide!';
+hideButton.id = 'hide-button';
+document.body.appendChild(hideButton);
+
+hideButton.onclick = function () {
+    hideDiv.classList.toggle('hide-it');
+}
+document.write(`<hr>`);
 //     - створити інпут який приймає вік людини та кнопку яка підтверджує дію.
-//     При натисканні на кнопку зчитати інформацію з інпуту та перевірити вік чи меньше він ніж 18, та повідомити про це користувача
+//     При натисканні на кнопку зчитати інформацію з інпуту та перевірити вік чи меньше він ніж 18,
+//     та повідомити про це користувача
+const inputAge = document.createElement('input');
+inputAge.placeholder = 'your age';
+document.body.appendChild(inputAge);
+
+const ageButton = document.createElement('button');
+ageButton.innerText = 'send';
+ageButton.id = 'age-button';
+document.body.appendChild(ageButton);
+
+ageButton.onclick = function (){
+    if (inputAge.value < 18){
+        const h1Age = document.createElement('h1');
+        h1Age.innerText = 'You are not adult. Go away!!!!'
+        document.body.appendChild(h1Age);
+        inputAge.classList.add('hide-it');
+        ageButton.classList.add('hide-it');
+    }
+}
