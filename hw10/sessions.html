@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sessions</title>
+    <style>
+        .el {
+            margin: 10px;
+            border: 1px solid gray;
+        }
+    </style>
+</head>
+<body>
+
+<script>
+    let sessions = JSON.parse(localStorage.getItem('sessions'));
+    for (const session of sessions) {
+        const element = document.createElement('div');
+        element.classList.add('el');
+        element.innerHTML = session;
+        document.body.appendChild(element);
+    }
+</script>
+</body>
+</html>
