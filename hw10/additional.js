@@ -34,8 +34,12 @@ button2.onclick = function () {
     }
 }
 // - Создайте меню, которое раскрывается/сворачивается при клике
-//
-//
+let btn3 = document.getElementById('btn3');
+let ulMenu = document.getElementById('menu');
+
+btn3.onclick = function () {
+    ulMenu.classList.toggle('hidden');
+}
 // - Создать список комментариев , пример объекта коментария - {title : 'lorem', body:'lorem ipsum dolo sit ameti'}.
 //     Вывести список комментариев в документ, каждый в своем блоке.
 //     Добавьте каждому комментарию по кнопке для сворачивания его body.
