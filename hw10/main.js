@@ -11,7 +11,7 @@ f1.onsubmit = function (ev) {
     console.log(user);
     f1Div.innerText = `Name: ${user.name}, Surname: ${user.surname}, Age: ${user.age}`;
 }
-document.write(`<hr>`)
+
 // ==========================
 // є сторінка, на якій є блок, я кому знаходиьтся цифра. написати код, який при кожному перезавантажені
 // сторінки буде додавати до неї +1
@@ -91,12 +91,36 @@ prev.onclick = function () {
 }
 // - Створити довільний елемент з id = text та створити кнопку.Використовуючи JavaScript, зробіть так,
 // щоб при натисканні на кнопку зникав елемент з id="text".
-//
-//
+const hideDiv1 = document.getElementById('text');
+const hideButton1 = document.getElementById('hide-button');
+
+hideButton1.onclick = function () {
+    hideDiv1.classList.toggle('hide-it');
+}
 //     - створити інпут який приймає вік людини та кнопку яка підтверджує дію.При натисканні на кнопку
 //     зчитати інформацію з інпуту та перевірити вік чи меньше він ніж 18, та повідомити про це користувача
-//
-//
+let isAdult = document.getElementById('adult');
+const inputAge = document.createElement('input');
+inputAge.placeholder = 'your age';
+isAdult.appendChild(inputAge);
+
+const ageButton = document.createElement('button');
+ageButton.innerText = 'send';
+ageButton.id = 'age-button';
+isAdult.appendChild(ageButton);
+const h1Age = document.createElement('h1');
+h1Age.innerText = 'Are You adult?';
+isAdult.appendChild(h1Age);
+
+ageButton.onclick = function (){
+    if (inputAge.value < 18){
+        h1Age.innerText = 'You are not adult. Go away!!!!';
+    } else {
+        h1Age.innerText = 'Wellcome!!!!';
+    }
+    // inputAge.classList.add('hide-it');
+    // ageButton.classList.add('hide-it');
+}
 // *** Створити 3 інпута та кнопку. Один визначає кількість рядків, другий - кількість ячеєк, третій вмиіст ячеєк.
 //     При натисканні кнопки, вся ця інформація зчитується і формується табличка, з відповідним вмістом.
 // (Додатковачастина для завдання)

@@ -28,9 +28,26 @@
             border-radius: 5px;
             margin: 5px;
         }
+
         #prev, #next {
             width: 200px;
             font-size: 24px;
+        }
+
+        #text {
+            width: 200px;
+            height: 200px;
+            background-color: silver;
+        }
+
+        #hide-button {
+            display: block;
+            width: 200px;
+            margin: 10px;
+        }
+
+        .hide-it {
+            visibility: hidden;
         }
     </style>
 </head>
@@ -55,6 +72,15 @@
     </div>
 </div>
 <hr>
+<div>
+    <div id="text"></div>
+    <button id="hide-button">Hide it!</button>
+</div>
+<hr>
+<div id="adult"></div>
+<hr>
+
+
 
 <script src="main.js">
 
