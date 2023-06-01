@@ -7,6 +7,33 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>HW10 additional</title>
     <style>
+        a {
+            color: darkslategray;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        #btn3 {
+            border: 1px solid lightgray;
+            margin: 10px;
+            padding: 5px 10px;
+            font-weight: bold;
+            font-size: 24px;
+            background-color: lightgray;
+        }
+
+        #menu {
+            list-style: none;
+        }
+
+        .lis {
+            display: inline-block;
+            border: 1px solid lightgray;
+            margin: 10px;
+            padding: 5px 10px;
+            background-color: lightgray;
+        }
+
         .hidden {
             visibility: hidden;
         }
@@ -14,26 +41,26 @@
 </head>
 <body>
 <div>
-    <input type="text" id = 'obscene' name="obscene" placeholder="some word...">
+    <input type="text" id='obscene' name="obscene" placeholder="some word...">
     <button id="btn">send</button>
 </div>
 <hr>
 <div>
-    <input type="text" id = 'obscene2' name="obscene2" placeholder="some text...">
+    <input type="text" id='obscene2' name="obscene2" placeholder="some text...">
     <button id="btn2">send</button>
 </div>
 <hr>
 <div class="menu-div">
     <button id="btn3">Menu</button>
     <ul id="menu" class="hidden">
-        <li class="lis">MenuItem1</li>
-        <li class="lis">MenuItem2</li>
-        <li class="lis">MenuItem3</li>
-        <li class="lis">MenuItem4</li>
-        <li class="lis">MenuItem5</li>
+        <li class="lis"><a href="#">MenuItem1</a></li>
+        <li class="lis"><a href="#">MenuItem2</a></li>
+        <li class="lis"><a href="#">MenuItem3</a></li>
+        <li class="lis"><a href="#">MenuItem4</a></li>
+        <li class="lis"><a href="#">MenuItem5</a></li>
     </ul>
 </div>
-
+<hr>
 
 
 <script src="additional.js"></script>
