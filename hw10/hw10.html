@@ -7,19 +7,30 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>HW 10</title>
     <style>
-        #f1Div{
+        #f1Div {
             background-color: silver;
             width: 400px;
             text-align: center;
             margin: 10px 20px;
         }
-        #counter{
+
+        #counter {
             width: 50px;
             height: 50px;
             background-color: lightgray;
             color: red;
             font-size: 40px;
             text-align: center;
+        }
+
+        .pag-item {
+            border: 1px solid lightgray;
+            border-radius: 5px;
+            margin: 5px;
+        }
+        #prev, #next {
+            width: 200px;
+            font-size: 24px;
         }
     </style>
 </head>
@@ -34,6 +45,15 @@
 <hr>
 
 <div id="counter"></div>
+<hr>
+
+<div id="pagination">
+    <div id="pagOutput"></div>
+    <div id="btns">
+        <button id="prev">prev</button>
+        <button id="next">next</button>
+    </div>
+</div>
 <hr>
 
 <script src="main.js">
