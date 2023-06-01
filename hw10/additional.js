@@ -10,7 +10,7 @@ let button = document.getElementById('btn');
 
 button.onclick = function () {
     let inputText = input.value;
-    if (obscene.includes(inputText)){
+    if (obscene.includes(inputText)) {
         alert('Do not do this!!!!!!!!');
     }
 }
@@ -19,10 +19,21 @@ button.onclick = function () {
 //     Потрібно перевіряти чи не містить ціле речення в собі погані слова.
 //     Кинути алерт з попередженням у випадку якщо містить.
 //     Перевірку робити при натисканні на кнопку
-//
-//
-//
-//
+let input2 = document.getElementById('obscene2');
+let button2 = document.getElementById('btn2');
+
+button2.onclick = function () {
+    let inputText = input2.value;
+    const inputTextArray = inputText.split(' ');
+    console.log(inputTextArray);
+    for (const inputTextArrayElement of inputTextArray) {
+        for (const item of obscene) {
+            if (item === inputTextArrayElement) {
+                alert('Do not do this!!!!!!!!');
+            }
+        }
+    }
+}
 // - Создайте меню, которое раскрывается/сворачивается при клике
 //
 //
