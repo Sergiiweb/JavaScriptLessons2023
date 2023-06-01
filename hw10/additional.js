@@ -3,8 +3,17 @@
 //     Якщо людина вводить слово і воно міститься в масиві не цензурних слів
 // кинути алерт з попередженням.
 //     Перевірку робити при натисканні на кнопку
-//
-//
+let obscene = ['fuck', 'dick', 'ass'];
+
+let input = document.getElementById('obscene');
+let button = document.getElementById('btn');
+
+button.onclick = function () {
+    let inputText = input.value;
+    if (obscene.includes(inputText)){
+        alert('Do not do this!!!!!!!!');
+    }
+}
 // - Сворити масив не цензцрних слів.
 //     Сворити інпут текстового типу.
 //     Потрібно перевіряти чи не містить ціле речення в собі погані слова.
