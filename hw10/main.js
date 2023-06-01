@@ -19,7 +19,7 @@ f1.onsubmit = function (ev) {
 // є сторінка, на якій є блок, я кому знаходиьтся цифра. написати код, який при кожному перезавантажені
 // сторінки буде додавати до неї +1
 let reloadCount = document.getElementById('counter');
-// let count = 0;
+// localStorage.clear();
 window.onload = function () {
     let count = localStorage.getItem('count') || 1;
     reloadCount.innerHTML = count;
