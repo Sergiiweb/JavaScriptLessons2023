@@ -49,6 +49,12 @@
         .hide-it {
             visibility: hidden;
         }
+        #table{
+            border: 1px solid lightgray;
+        }
+        #table td{
+             border: 1px solid lightgray;
+         }
     </style>
 </head>
 <body>
@@ -79,7 +85,20 @@
 <hr>
 <div id="adult"></div>
 <hr>
+<div id="inputs">
+    <form id="f2">
+        <input type="text" name="rows" placeholder="how many rows?"><br>
+        <input type="text" name="cells" placeholder="how many cells?"><br>
+        <input type="text" name="text2" placeholder="inner text..."><br>
+        <button>send</button>
+    </form>
+    <div id="tableDiv">
+        <table id="table">
 
+        </table>
+    </div>
+</div>
+<hr>
 
 
 <script src="main.js">

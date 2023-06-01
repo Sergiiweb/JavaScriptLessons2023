@@ -7,8 +7,11 @@ let f1 = document.forms.f1;
 
 f1.onsubmit = function (ev) {
     ev.preventDefault();
-    let user = {name: this.username.value, surname: this.usersurname.value, age: this.userage.value};
-    console.log(user);
+    let user = {
+        name: this.username.value,
+        surname: this.usersurname.value,
+        age: this.userage.value
+    };
     f1Div.innerText = `Name: ${user.name}, Surname: ${user.surname}, Age: ${user.age}`;
 }
 
@@ -112,8 +115,8 @@ const h1Age = document.createElement('h1');
 h1Age.innerText = 'Are You adult?';
 isAdult.appendChild(h1Age);
 
-ageButton.onclick = function (){
-    if (inputAge.value < 18){
+ageButton.onclick = function () {
+    if (inputAge.value < 18) {
         h1Age.innerText = 'You are not adult. Go away!!!!';
     } else {
         h1Age.innerText = 'Wellcome!!!!';
@@ -124,7 +127,27 @@ ageButton.onclick = function (){
 // *** Створити 3 інпута та кнопку. Один визначає кількість рядків, другий - кількість ячеєк, третій вмиіст ячеєк.
 //     При натисканні кнопки, вся ця інформація зчитується і формується табличка, з відповідним вмістом.
 // (Додатковачастина для завдання)
-//
+
+let f2 = document.getElementById('f2');
+let table = document.getElementById('table');
+
+f2.onsubmit = function (ev) {
+    ev.preventDefault();
+    let tableRows = this.rows.value;
+    let tableCells = this.cells.value;
+    let tableText = this.text2.value;
+    table.innerHTML = '';
+
+    for (let i = 0; i < tableRows; i++) {
+        let row = document.createElement('tr');
+        table.appendChild(row);
+        for (let k = 0; k < tableCells; k++) {
+            let cell = document.createElement('td');
+            cell.innerText = tableText;
+            row.appendChild(cell);
+        }
+    }
+}
 // *** (подібне було вище, але...будьте уважні в другій частині) створити сторінку з довільним блоком,
 // в середині якого є значення "100грн"
 // при перезавантаженні сторінки до значаення додається по 10грн, але !!!
