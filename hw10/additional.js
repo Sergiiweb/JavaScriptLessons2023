@@ -24,8 +24,7 @@ let button2 = document.getElementById('btn2');
 
 button2.onclick = function () {
     let inputText = input2.value;
-    const inputTextArray = inputText.split(' ');
-    console.log(inputTextArray);
+    const inputTextArray = inputText.replaceAll('!', '').replaceAll('.', '').split(' ');
     for (const inputTextArrayElement of inputTextArray) {
         for (const item of obscene) {
             if (item === inputTextArrayElement) {
