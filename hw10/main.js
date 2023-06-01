@@ -47,7 +47,7 @@ for (let i = 1; i < 101; i++) {
     let obj = {name: `Name${i}`, surname: `Surname${i}`, age: Math.ceil(Math.random() * 100)};
     array100.push(obj);
 }
-console.log(array100);
+
 let pagOutput = document.getElementById('pagOutput');
 let prev = document.getElementById('prev');
 let next = document.getElementById('next');
@@ -151,5 +151,19 @@ f2.onsubmit = function (ev) {
 // *** (подібне було вище, але...будьте уважні в другій частині) створити сторінку з довільним блоком,
 // в середині якого є значення "100грн"
 // при перезавантаженні сторінки до значаення додається по 10грн, але !!!
-//     зміна ціни відбувається тільки на перезавантаження, які відбулись пізніше ніж 10 секунд після попереднього.
+//     зміна ціни відбувається тільки на перезавантаження, які відбулись пізніше ніж 10 секунд після
+//     попереднього.
 //     При перезавантаженні, яке відбулось раніше ніж минуло 10 секунд - нічого не відбувається
+let uah = document.getElementById('uah');
+// localStorage.clear();
+window.addEventListener('load', function () {
+    let uahCounter = localStorage.getItem('uahCounter') || 100;
+    let sessions2 = JSON.parse(localStorage.getItem('sessions2')) || [];
+    sessions2.push(new Date().getTime());
+    localStorage.setItem('sessions2', JSON.stringify(sessions2));
+    if (sessions2[sessions2.length - 1] - sessions2[sessions2.length - 2] > 10000) {
+        uahCounter = +uahCounter + 10;
+        localStorage.setItem('uahCounter', uahCounter);
+    }
+    uah.innerText = uahCounter;
+})
