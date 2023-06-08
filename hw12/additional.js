@@ -6,7 +6,11 @@
 
 let url = new URL('https://jsonplaceholder.typicode.com/users');
 
+fetch(url)
+    .then(response => response.json())
+    .then((users) => {
 
+    })
 
 // 1.
 // Отримати відповідь з цього ресурсу відповідь, та вивести в документ як в прикладі на занятті
