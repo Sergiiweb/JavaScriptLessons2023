@@ -14,9 +14,8 @@ fetch(url)
 
         for (const user of users) {
             const userDiv = document.createElement('div');
-            console.log(user);
+            userDiv.classList.add('user');
             usersDiv.appendChild(userDiv);
-
 
             let iterUser = function (user) {
 
