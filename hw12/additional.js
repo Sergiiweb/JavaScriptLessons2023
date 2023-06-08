@@ -9,7 +9,30 @@ let url = new URL('https://jsonplaceholder.typicode.com/users');
 fetch(url)
     .then(response => response.json())
     .then((users) => {
-        console.log(users);
+        const usersDiv = document.createElement('div');
+        document.body.appendChild(usersDiv);
+
+        for (const user of users) {
+            const userDiv = document.createElement('div');
+            console.log(user);
+            usersDiv.appendChild(userDiv);
+
+
+            let iterUser = function (user) {
+
+                for (const key in user) {
+                    if (typeof user[key] === 'object') {
+                        iterUser(user[key]);
+                    } else {
+                        const userItem = document.createElement('div');
+                        userItem.innerText = key + ' ' + user[key];
+                        userDiv.appendChild(userItem);
+                    }
+
+                }
+            }
+            iterUser(user);
+        }
     })
 
 // 1.
