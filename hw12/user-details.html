@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>user-details</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        div {
+            border: 1px solid gray;
+            border-radius: 10px;
+            margin: 5px;
+            padding: 5px 20px;
+        }
+        .user-name {
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<h1>User details:</h1>
+<div id='user' class="userDetails"></div>
+
+<script>
+
+    // при кліку на посилання перехід на відповідну сторінку, на якій буде вся інформація про користувача (всі 15 полів)
+    // отримана через додатковий запит (https://jsonplaceholder.typicode.com/users/XXX   ХХХ - айді користувача)
+
+    let url = new URL(location.href);
+    const userId = url.searchParams.get('id');
+
+    const userDiv = document.getElementById('user');
+
+    let userUrl = 'https://jsonplaceholder.typicode.com/users/' + userId;
+
+    fetch(userUrl)
+        .then(response => response.json())
+        .then(user => {
+            const userName = document.createElement('div');
+            userName.innerText = 'Name: ' + user.name;
+            userName.classList.add('user-name');
+            userDiv.appendChild(userName);
+
+            const userUserName = document.createElement('div');
+            userUserName.innerText = 'Username: ' + user.username;
+            userUserName.classList.add('user-user-name');
+            userDiv.appendChild(userUserName);
+
+            const userEmail = document.createElement('div');
+            userEmail.innerText = 'Email: ' + user.email;
+            userEmail.classList.add('user-email');
+            userDiv.appendChild(userEmail);
+
+            const userAddress = document.createElement('div');
+            userAddress.innerText =
+                'Address: street: ' + user.address.street
+                + ', suite: ' + user.address.suite
+                + ', city: ' + user.address.city
+                + ', zipcode: ' + user.address.zipcode
+                + ', GEO: lat - ' + user.address.geo.lat + ' lng - ' + user.address.geo.lng + '.';
+            userAddress.classList.add('user-address');
+            userDiv.appendChild(userAddress);
+
+            const userPhone = document.createElement('div');
+            userPhone.innerText = 'Phone:' + user.phone;
+            userPhone.classList.add('user-email');
+            userDiv.appendChild(userPhone);
+
+            const userWebsite = document.createElement('div');
+            userWebsite.innerText = 'Website: ' + user.website;
+            userWebsite.classList.add('user-website');
+            userDiv.appendChild(userWebsite);
+
+            const userCompany = document.createElement('div');
+            userCompany.innerText =
+                'Company: name: ' + user.company.name
+                + ', catchPhrase: ' + user.company.catchPhrase
+                + ', bs: ' + user.company.bs + '.';
+            userCompany.classList.add('user-company');
+            userDiv.appendChild(userCompany);
+        });
+
+</script>
+</body>
+</html>
