@@ -16,7 +16,6 @@ fetch(url)
             const userDiv = document.createElement('div');
             userDiv.classList.add('user');
             usersDiv.appendChild(userDiv);
-
             let iterUser = function (user) {
 
                 for (const key in user) {
@@ -24,13 +23,17 @@ fetch(url)
                         iterUser(user[key]);
                     } else {
                         const userItem = document.createElement('div');
-                        userItem.innerText = key + ' ' + user[key];
+                        userItem.innerHTML = `<b>${key}</b>  ${user[key]}`;
                         userDiv.appendChild(userItem);
                     }
-
                 }
             }
+
             iterUser(user);
+
+            const userButton = document.createElement('button');
+            userButton.innerText = 'UserPosts';
+            userDiv.appendChild(userButton);
         }
     })
 
