@@ -71,6 +71,7 @@ main {
     width: 40%;
     min-height: 80px;
     border: 2px solid green;
+    border-radius: 10px;
     margin: 10px;
     background-color: darkgray;
     display: flex;
