@@ -5,9 +5,75 @@
 //     6 Каждому посту додати кнопку/посилання, при кліку на яку відбувається перехід на сторінку post-details.html,
 //     котра має детальну інфу про поточний пост.
 
-let url = new URL(location.href);
-const userId = url.searchParams.get('id');
+const url = new URL(location.href);
+const userId = url.searchParams.get('userId');
 
-const userDiv = document.getElementById('user-block');
+const userBlock = document.getElementById('user-block');
 
-let userUrl = 'https://jsonplaceholder.typicode.com/users/' + userId;
+const userUrl = 'https://jsonplaceholder.typicode.com/users/' + userId;
+
+fetch(userUrl)
+    .then((response) => response.json())
+    .then((user) => {
+        const userDiv = document.createElement('div');
+        userDiv.classList.add('user-div');
+        userBlock.appendChild(userDiv);
+
+        const userInfoList = document.createElement('ul');
+        listCreator(user, userInfoList);
+        userDiv.appendChild(userInfoList);
+
+        const userButton = document.createElement('button');
+        userButton.classList.add('user-posts-button');
+        userButton.innerText = 'posts of current user';
+        userBlock.appendChild(userButton);
+
+        userButton.onclick = () => {
+            fetch(userUrl + '/posts')
+                .then((response) => response.json())
+                .then((posts) => {
+                    const userPosts = document.getElementById('posts');
+                    userPosts.innerHTML = '';
+
+                    for (const post of posts) {
+                        const postDiv = document.createElement('div');
+                        postDiv.innerText = post.title;
+                        userPosts.appendChild(postDiv);
+
+                        const postInfoButton = document.createElement('button');
+                        postInfoButton.innerText = 'more...';
+                        userPosts.appendChild(postInfoButton);
+
+                        postInfoButton.onclick = () => {
+                            location.href = `post-details.html?postId=${post.id}`;
+                        }
+                    }
+
+                })
+        }
+
+    });
+
+function liCreator(key, value, parent) {
+    const li = document.createElement('li');
+    li.innerHTML = `<b>${key}:</b> ${value}`;
+    parent.appendChild(li);
+}
+
+function ulCreator(key, object, parent) {
+    const li = document.createElement('li');
+    const ul = document.createElement('ul');
+    li.innerHTML = `<b>${key}:</b> `;
+    parent.appendChild(li);
+    li.appendChild(ul);
+
+    listCreator(object, ul);
+}
+
+function listCreator(object, parent) {
+    for (const key in object) {
+        typeof object[key] === 'object'
+            ? ulCreator(key, object[key], parent)
+            : liCreator(key, object[key], parent);
+    }
+}
