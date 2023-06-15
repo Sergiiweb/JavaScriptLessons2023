@@ -27,7 +27,7 @@ fetch(postCommentsUrl)
     .then((response) => response.json())
     .then((comments) => {
         let count = 1;
-        for (const comment in comments) {
+        for (const comment of comments) {
 
             const commentDiv = document.createElement('div');
             commentDiv.classList.add('comment-div');
@@ -37,9 +37,9 @@ fetch(postCommentsUrl)
             commentDiv.appendChild(countDiv);
             count++;
 
-            for (const key in comments[comment]) {
+            for (const key in comment) {
                 const div = document.createElement('div');
-                div.innerHTML = `<b>${key}</b>: ${comments[comment][key]}`;
+                div.innerHTML = `<b>${key}</b>: ${comment[key]}`;
                 commentDiv.appendChild(div);
             }
 
