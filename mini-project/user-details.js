@@ -44,7 +44,7 @@ fetch(userUrl)
 
                         const postDiv = document.createElement('div');
                         postDiv.classList.add('post-div');
-                        postDiv.innerText = post.title;
+                        postDiv.innerText = `postId:${post.id} - ${post.title}`;
                         postsDiv.appendChild(postDiv);
 
                         const postInfoButton = document.createElement('button');
