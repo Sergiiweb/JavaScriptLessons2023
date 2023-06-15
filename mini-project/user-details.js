@@ -20,6 +20,7 @@ fetch(userUrl)
         userBlock.appendChild(userDiv);
 
         const userInfoList = document.createElement('ul');
+        userInfoList.classList.add('user-info-list');
         listCreator(user, userInfoList);
         userDiv.appendChild(userInfoList);
 
@@ -33,16 +34,23 @@ fetch(userUrl)
                 .then((response) => response.json())
                 .then((posts) => {
                     const userPosts = document.getElementById('posts');
+                    userPosts.classList.toggle('hide');
                     userPosts.innerHTML = '';
 
                     for (const post of posts) {
+                        const postsDiv = document.createElement('div');
+                        postsDiv.classList.add('posts-div');
+                        userPosts.appendChild(postsDiv);
+
                         const postDiv = document.createElement('div');
+                        postDiv.classList.add('post-div');
                         postDiv.innerText = post.title;
-                        userPosts.appendChild(postDiv);
+                        postsDiv.appendChild(postDiv);
 
                         const postInfoButton = document.createElement('button');
+                        postInfoButton.classList.add('post-info-button');
                         postInfoButton.innerText = 'more...';
-                        userPosts.appendChild(postInfoButton);
+                        postsDiv.appendChild(postInfoButton);
 
                         postInfoButton.onclick = () => {
                             location.href = `post-details.html?postId=${post.id}`;

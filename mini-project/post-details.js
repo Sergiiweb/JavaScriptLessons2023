@@ -30,8 +30,10 @@ fetch(postCommentsUrl)
         for (const comment in comments) {
 
             const commentDiv = document.createElement('div');
+            commentDiv.classList.add('comment-div');
             const countDiv = document.createElement('div');
-            countDiv.innerHTML = `<b>Comment #${count}</b>`;
+            countDiv.classList.add('count-div');
+            countDiv.innerText = `Comment #${count}`;
             commentDiv.appendChild(countDiv);
             count++;
 
